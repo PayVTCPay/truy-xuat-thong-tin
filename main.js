@@ -62,10 +62,10 @@ scene.add(spotLight);
 scene.add(spotLight.target);
 
 // ===== LOAD MODEL =====
-const loader = new GLTFLoader().setPath("/models/");
+const loader = new GLTFLoader().setPath("./models/");
 
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath("/draco/"); // đường dẫn tới decoder
+dracoLoader.setDecoderPath("./draco/"); // đường dẫn tới decoder
 loader.setDRACOLoader(dracoLoader);
 
 loader.load(
