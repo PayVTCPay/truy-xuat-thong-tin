@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trống Đồng Đông Sơn - Quà Tặng Ngoại Giao</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script async="" src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
+        }
+      }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-heritage {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 120s linear infinite;
+        }
+
+        .selection-amber::selection {
+            background-color: #fef3c7; /* amber-100 */
+            color: #78350f; /* amber-900 */
+        }
+
+        /* Custom scrollbar for aesthetic */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdfcf7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#fdfcf7] text-stone-800 leading-relaxed pb-20 relative selection-amber">
+    <!-- 1. PRODUCT CERTIFICATE IMAGE - Top Section -->
+    <section class="bg-white border-b border-amber-100 py-12 relative overflow-hidden z-10">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col items-center gap-6">
+                <div class="flex items-center gap-2 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="badge-check" class="lucide lucide-badge-check w-4 h-4 text-amber-700"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-amber-800">
+                        Giấy chứng nhận sản phẩm
+                    </span>
+                </div>
+                <div class="w-full bg-white shadow-2xl border border-stone-200 p-3 rounded-sm relative group max-w-2xl">
+                    <div class="border border-stone-100 p-1">
+                        <img src="file:///D:/DUONG/VTC%20PAY/B%E1%BA%A3o%20t%C3%A0ng/slide/New%20folder/Demo/demo/giaychungnhan.png" class="w-full h-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute inset-0 border-[1px] border-amber-600/20 pointer-events-none m-6"></div>
+                </div>
+                <p class="text-[9px] text-stone-400 uppercase tracking-widest italic text-center">
+                    * Bản gốc đi kèm trong hộp gỗ khi bàn giao sản phẩm
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- BACKGROUND PATTERN - Subtle Dong Son Drum -->
+    <div class="fixed inset-0 pointer-events-none opacity-[0.03] overflow-hidden flex items-center justify-center z-0">
+        <svg id="dong-son-bg" width="1200" height="1200" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.1" class="text-amber-900 animate-spin-slow">
+            <circle cx="50" cy="50" r="48"></circle>
+            <circle cx="50" cy="50" r="40"></circle>
+            <circle cx="50" cy="50" r="30"></circle>
+            <circle cx="50" cy="50" r="20"></circle>
+            <circle cx="50" cy="50" r="10"></circle>
+            <path d="M50 2 L50 8 M50 92 L50 98 M2 50 L8 50 M92 50 L98 50" stroke-width="0.5"></path>
+            <!-- Lines will be injected by JS -->
+        </svg>
+    </div>
+
+    <!-- PARTNER LOGOS - Top Right Corner -->
+    <div class="fixed top-6 right-6 z-50 flex items-center gap-6 bg-white/50 backdrop-blur-md px-4 py-2 rounded-full border border-amber-100 shadow-sm">
+        <div class="flex flex-col items-end">
+            <span class="text-[8px] font-bold text-stone-400 uppercase tracking-widest">Dự án hợp tác</span>
+            <div class="flex items-center gap-4 mt-1">
+                <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield" class="lucide lucide-shield w-3 h-3 text-amber-700"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+                    <span class="text-[9px] font-bold text-stone-900 uppercase">Bảo tàng Lịch sử Quốc gia</span>
+                </div>
+                <div class="h-3 w-px bg-stone-300"></div>
+                <div class="flex items-center gap-1">
+                    <span class="text-[9px] font-bold text-stone-900 uppercase">VTC</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CERTIFICATE HEADER -->
+    <section class="bg-white border-b border-amber-100 py-4 relative overflow-hidden z-10">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i data-lucide="badge-check" class="w-4 h-4 text-amber-700"></i>
+                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-800">
+                    Truy xuất nguồn gốc sản phẩm
+                </span>
+            </div>
+            <div class="text-[9px] text-stone-400 uppercase tracking-widest italic">
+                * Kèm hồ sơ di sản & QR định danh
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND HEADER -->
+    <header class="py-16 text-center z-10 relative">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col items-center">
+            <div class="w-px h-16 bg-gradient-to-b from-transparent via-amber-600 to-transparent mb-8"></div>
+            <div class="w-12 h-12 border border-amber-600 flex items-center justify-center mb-6 rounded-sm rotate-45">
+                <i data-lucide="sun" class="text-amber-700 w-6 h-6 -rotate-45"></i>
+            </div>
+            <h2 class="text-[11px] font-bold tracking-[0.8em] text-stone-400 uppercase mb-2">Dong Son National Treasure</h2>
+            <h1 class="text-4xl md:text-6xl font-heritage font-bold text-stone-900 mt-2 mb-4">Trống Đồng Đông Sơn</h1>
+            <p class="text-sm font-light italic text-amber-800 tracking-widest uppercase">Biểu tượng văn hóa quốc gia</p>
+            <div class="space-y-6 text-stone-600 font-light text-[12px] leading-loose">
+                    <p>
+                      Cách đây hơn hai thiên niên kỷ, tại lưu vực sông Hồng, sông Mã, nền văn hóa Đông Sơn đã nở rộ, đánh dấu thời kỳ rực rỡ nhất của thời đại đồ đồng. Những chiếc trống đồng không chỉ là nhạc khí, mà là biểu tượng của quyền lực, là quyển "bách khoa toàn thư" ghi lại vũ trụ quan và đời sống của người Việt cổ.
+                    </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN PRODUCT SECTION (Trống Đồng) -->
+    <main class="max-w-6xl mx-auto px-6 z-10 relative">
+        <div class="grid md:grid-cols-2 gap-16 items-center pb-24 border-b border-stone-200/50">
+            <!-- Content -->
+            <div class="space-y-8 order-2 md:order-1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 rounded-full border border-amber-100">
+                    <i data-lucide="crown" class="w-3 h-3 text-amber-700"></i>
+                    <span class="text-[9px] font-bold text-amber-800 uppercase tracking-widest">Sản phẩm chính / Masterpiece</span>
+                </div>
+                <h2 class="text-3xl font-serif text-stone-900 leading-tight">
+                    Tiêu Bản Bảo Vật Quốc Gia <br>
+                    <span class="text-amber-700 italic">Trống Ngọc Lũ</span>
+                </h2>
+                
+                <div class="space-y-4 text-stone-600 text-sm leading-relaxed font-light text-justify">
+                    <p>
+                        <strong class="text-stone-900 font-medium">Sản phẩm trung tâm:</strong> Là tiêu bản thu nhỏ của Trống đồng Ngọc Lũ - Bảo vật quốc gia tiêu biểu nhất của văn hóa Đông Sơn. Đây là hiện vật hội tụ đầy đủ đỉnh cao kỹ thuật đúc đồng và hệ thống biểu tượng phản ánh vũ trụ quan người Việt cổ.
+                    </p>
+                    <p>
+                        Sản phẩm được xây dựng chính xác tuyệt đối về hình dáng, bố cục, tỷ lệ và tâm thế bảo vật gốc. Mọi chi tiết hoa văn chủ đạo (mặt trời, người múa, chim Lạc, chiến thuyền) đều được đối chiếu trực tiếp từ tư liệu bảo tàng.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-amber-100">
+                    <div>
+                        <span class="block text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-1">Kích thước</span>
+                        <span class="text-stone-900 font-medium">14,5 cm</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-1">Chất liệu</span>
+                        <span class="text-stone-900 font-medium">Đồng đỏ Mạ vàng</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-1">Trưng bày</span>
+                        <span class="text-stone-900 font-medium">Không gian ngoại giao</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-1">Ý nghĩa</span>
+                        <span class="text-stone-900 font-medium">Nhận diện quốc gia</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image (Demo 1) -->
+            <div class="relative order-1 md:order-2">
+                <div class="absolute inset-0 bg-amber-600/5 rounded-full blur-3xl transform scale-90"></div>
+                <div class="relative z-10 p-4 bg-white shadow-xl border border-stone-100 rounded-sm rotate-1 hover:rotate-0 transition-transform duration-700">
+                    <img src="file:///D:/DUONG/VTC%20PAY/B%E1%BA%A3o%20t%C3%A0ng/slide/New%20folder/Demo/demo/drum4.jpg" alt="Trống đồng - Demo 1" class="w-full h-auto object-cover grayscale-[0.1]">
+                    <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 text-[9px] font-bold tracking-widest uppercase border border-stone-200 shadow-sm">
+                        Phiên bản chuẩn bảo tàng
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SATELLITE PRODUCTS SECTION (Hệ vệ tinh) -->
+        <section class="py-24 border-b border-stone-200/50">
+            <div class="text-center mb-16 max-w-3xl mx-auto space-y-4">
+                <div class="flex items-center justify-center gap-3 text-amber-700">
+                    <i data-lucide="stars" class="w-4 h-4"></i>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.5em]">Hệ sản phẩm vệ tinh</span>
+                </div>
+                <h2 class="text-3xl font-serif text-stone-900">Kết Nối Di Sản Vào Đời Sống Đương Đại</h2>
+                <p class="text-stone-500 font-light text-sm">Nhóm vật phẩm nhỏ gọn, dành cho lãnh đạo và thành viên đoàn, phát triển từ hệ hoa văn chủ đạo nhằm gia tăng khả năng lan tỏa văn hóa.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- MEN'S GIFT SET (Demo 2) -->
+                <div class="group">
+                    <div class="relative overflow-hidden mb-6 shadow-lg border border-stone-100 bg-white p-2">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="file:///D:/DUONG/VTC%20PAY/B%E1%BA%A3o%20t%C3%A0ng/slide/New%20folder/Demo/demo/demo_male.png" alt="Bộ quà tặng nam - Demo 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="absolute top-4 left-4 bg-stone-900 text-white px-3 py-1 text-[9px] font-bold uppercase tracking-widest">
+                            Quà tặng Nam / For Him
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl font-serif font-bold text-stone-900 flex items-center gap-2">
+                            Đồng Hồ, Nhẫn, Ghim cài áo, Khăn lụa, Sổ & Bút
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-amber-700 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </h3>
+                        <p class="text-xs text-stone-500 font-light leading-relaxed text-justify">
+                            <strong>Trống Đồng, Chim Lạc & Bông Lúa:</strong> Vật phẩm mang tính "ngoại giao" cao, lấy cảm hứng từ hoa văn mặt trời nhiều tia ở trung tâm mặt trống. Chim Lạc biểu trưng cho khát vọng bay cao, kết nối trời - đất. Bông lúa thể hiện nền văn minh lúa nước và sự thịnh vượng.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- WOMEN'S GIFT SET (Demo 3) -->
+                <div class="group">
+                    <div class="relative overflow-hidden mb-6 shadow-lg border border-stone-100 bg-white p-2">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="file:///D:/DUONG/VTC%20PAY/B%E1%BA%A3o%20t%C3%A0ng/slide/New%20folder/Demo/demo/demo_female.png" alt="Bộ quà tặng nữ - Demo 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="absolute top-4 left-4 bg-amber-700 text-white px-3 py-1 text-[9px] font-bold uppercase tracking-widest">
+                            Quà tặng Nữ / For Her
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl font-serif font-bold text-stone-900 flex items-center gap-2">
+                            Dây Chuyền, Vòng Tay, Khuyên Tai, Khăn Lụa & Trâm Cài
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-amber-700 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </h3>
+                        <p class="text-xs text-stone-500 font-light leading-relaxed text-justify">
+                            <strong>Biểu tượng nguồn sống:</strong> Chim Lạc biểu trưng cho khát vọng bay cao, kết nối trời - đất - con người. Các sản phẩm được thiết kế tinh giản, đương đại. Là vật phẩm đại diện cao nhất, gắn kết giữa cá nhân và di sản, phù hợp tặng lãnh đạo nữ, phu nhân.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- VIDEO tư liệu -->
+        <section class="py-24">
+            <div class="text-center mb-16 space-y-4">
+                <div class="flex items-center justify-center gap-3 text-amber-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" class="lucide lucide-play w-4 h-4"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.5em]">Thước phim tư liệu</span>
+                </div>
+                <h2 class="text-2xl font-serif text-stone-900">Quy trình chế tác &amp; Linh hồn di sản</h2>
+            </div>
+            
+            <div class="relative aspect-video w-full max-w-4xl mx-auto bg-stone-900 group overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1551817411-93a0279c6d1d?auto=format&amp;fit=crop&amp;q=80&amp;w=1200" alt="Video thumbnail" class="w-full h-full object-cover opacity-40 grayscale group-hover:scale-105 transition-transform duration-1000">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center bg-white/10 backdrop-blur-md group-hover:bg-amber-600 group-hover:border-amber-600 transition-all cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" class="lucide lucide-play w-6 h-6 text-white fill-current ml-1"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+                    </div>
+                </div>
+                <div class="absolute bottom-6 left-6 right-6 flex justify-between items-center text-[10px] text-white/50 uppercase tracking-widest font-bold">
+                    <span>04:12</span>
+                    <span class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div> 
+                        Trực quan hóa di sản
+                    </span>
+                </div>
+            </div>
+        </section>
+        <div class="py-24 border-t border-stone-200/50">
+            <div class="grid md:grid-cols-3 gap-12" id="cultural-details">
+                <!-- Injected by JS -->
+            <div class="space-y-4 p-8 border border-stone-100 bg-white/80 backdrop-blur-sm shadow-sm hover:border-amber-200 transition-colors group">
+                    <div class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="component" class="lucide lucide-component w-4 h-4 text-amber-700 group-hover:rotate-12 transition-transform"><path d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"></path><path d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z"></path><path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z"></path><path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"></path></svg>
+                        <h3 class="text-[11px] font-bold text-stone-900 uppercase tracking-widest">Mặt trời 14 cánh</h3>
+                    </div>
+                    <p class="text-xs text-stone-500 leading-relaxed font-light">Nằm tại trung tâm mặt số, đại diện cho thần Mặt Trời trong tín ngưỡng của cư dân Đông Sơn, biểu trưng cho sự sống và nguồn năng lượng vĩnh cửu.</p>
+                </div><div class="space-y-4 p-8 border border-stone-100 bg-white/80 backdrop-blur-sm shadow-sm hover:border-amber-200 transition-colors group">
+                    <div class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="component" class="lucide lucide-component w-4 h-4 text-amber-700 group-hover:rotate-12 transition-transform"><path d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"></path><path d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z"></path><path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z"></path><path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"></path></svg>
+                        <h3 class="text-[11px] font-bold text-stone-900 uppercase tracking-widest">Chim Lạc</h3>
+                    </div>
+                    <p class="text-xs text-stone-500 leading-relaxed font-light">Họa tiết chim Lạc bay ngược chiều kim đồng hồ thể hiện sự nối tiếp truyền thống và khát vọng vươn lên của người Việt cổ.</p>
+                </div><div class="space-y-4 p-8 border border-stone-100 bg-white/80 backdrop-blur-sm shadow-sm hover:border-amber-200 transition-colors group">
+                    <div class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="component" class="lucide lucide-component w-4 h-4 text-amber-700 group-hover:rotate-12 transition-transform"><path d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"></path><path d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z"></path><path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z"></path><path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"></path></svg>
+                        <h3 class="text-[11px] font-bold text-stone-900 uppercase tracking-widest">Họa tiết nhân sinh</h3>
+                    </div>
+                    <p class="text-xs text-stone-500 leading-relaxed font-light">Các hình ảnh giã gạo, chèo thuyền tái hiện đời sống lao động cộng đồng, đề cao giá trị gia đình và sự đoàn kết dân tộc.</p>
+                </div></div>
+        </div>
+
+               
+
+        <!-- QR EXPERIENCE PREVIEW -->
+        <section class="py-24">
+            <div class="relative bg-stone-900 text-white p-12 overflow-hidden rounded-sm">
+                <!-- Decorative BG -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-amber-600/20 rounded-full blur-[80px]"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
+                    <div class="flex-1 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full border border-white/20">
+                            <i data-lucide="scan" class="w-3 h-3 text-amber-400"></i>
+                            <span class="text-[9px] font-bold text-amber-200 uppercase tracking-widest">Trải nghiệm số</span>
+                        </div>
+                        <h2 class="text-3xl font-serif">Thẻ Chứng Nhận Tích Hợp QR/NFC</h2>
+                        <ul class="space-y-4 text-sm font-light text-stone-300">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-amber-500 mt-1"></i>
+                                <span>Xem mô hình 3D tương tác của Trống Ngọc Lũ.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-amber-500 mt-1"></i>
+                                <span>Video ngắn về văn hóa Đông Sơn và nghệ thuật đúc đồng.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-amber-500 mt-1"></i>
+                                <span>Thông tin chứng thực bản quyền và nguồn gốc sản phẩm.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-48 h-48 bg-white p-4 rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://baotanglichsu.vn/dong-son-project" alt="QR Code" class="w-full h-full object-contain">
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="max-w-6xl mx-auto px-6 mt-10 pt-16 border-t border-stone-200 text-center md:text-left z-10 relative">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3 text-stone-900 font-bold text-[10px] uppercase tracking-[0.4em]">
+                    <i data-lucide="landmark" class="w-4 h-4 text-amber-700"></i>
+                    Bảo tàng Lịch sử Quốc Gia
+                </div>
+                <p class="text-[10px] text-stone-400 uppercase tracking-[0.2em] font-medium leading-loose">
+                    Dự án quà tặng ngoại giao văn hóa <br>
+                    Khơi nguồn dòng chảy di sản Việt.
+                </p>
+            </div>
+            <div class="space-y-4 md:text-right">
+                <div class="text-[9px] text-stone-400 uppercase tracking-[0.5em] font-bold">
+                    © 2026 - BỘ SẢN PHẨM QUÀ TẶNG CAO CẤP
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialization
+        window.onload = function() {
+            // Initialize Icons
+            lucide.createIcons();
+
+            // Inject Background Lines for subtle drum effect
+            const svg = document.getElementById('dong-son-bg');
+            for (let i = 0; i < 14; i++) {
+                const angle = (i * 2 * Math.PI) / 14;
+                const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                line.setAttribute("x1", "50");
+                line.setAttribute("y1", "50");
+                line.setAttribute("x2", (50 + 48 * Math.cos(angle)).toString());
+                line.setAttribute("y2", (50 + 48 * Math.sin(angle)).toString());
+                line.setAttribute("stroke-width", "0.2");
+                svg.appendChild(line);
+            }
+        };
+    </script>
+</body>
+</html>
